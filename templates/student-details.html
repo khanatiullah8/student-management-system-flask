@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Student details
+{% endblock title %}
+
+{% block body %}
+<div class="container my-3">
+  <div class="card border-dark">
+    <div class="card-header bg-dark text-white">
+      <h4 class="mb-0">Student Details</h4>
+    </div>
+    <div class="card-body">
+      <div class="row gap-4">
+        <div class="col-md-3">
+          <img src={{url_for("static", filename="upload/"+student.photo)}} class="img-fluid rounded" style="height: 260px" alt={{student.photo}}>
+        </div>
+        <div class="col-md-7">
+          <h4 class="mb-3">{{student.name}}</h4>
+          <p><strong>Roll No:</strong>{{student.roll_number}}</p>
+          <p><strong>Email:</strong>{{student.email}}</p>
+          <p><strong>Date of Birth:</strong>{{student.dob}}</p>
+          <p><strong>Gender:</strong>{{student.gender}}</p>
+          <p><strong>Course:</strong>{{student.course}}</p>
+          <p class="mb-0"><strong>Admission Date:</strong>{{student.admission_date}}</p>
+        </div>
+        <div>
+          <a href="/" class="btn btn-secondary">Back</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock body %}
